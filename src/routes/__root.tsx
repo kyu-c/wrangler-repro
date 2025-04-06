@@ -1,3 +1,4 @@
+import { PrivyProvider } from '@privy-io/react-auth'
 import {
   HeadContent,
   Link,
@@ -65,7 +66,9 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <PrivyProvider appId="fake-app-id">
+        <Outlet />
+      </PrivyProvider>
     </RootDocument>
   )
 }
